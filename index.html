@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				width: 800px;
+				height: 800px;
+				border:solid 1px red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="800" height="800"></canvas>
+		
+		<script type="text/javascript">
+		var canvas = document.querySelector("#canvas");
+		var ctx = canvas.getContext('2d');
+			ctx.arc(400,400,380,0,Math.PI*2,true);
+			ctx.lineWidth =10;
+			ctx.stroke();
+			
+			for(var i=0;i<60;i++){
+				var x =360*Math.cos(Math.PI*2*i/60)+400;
+				var y =360*Math.sin(Math.PI*2*i/60)+400;
+				ctx.beginPath();
+				if(i%5==0)
+				ctx.arc(x,y,5,0,Math.PI*2,true);
+				else
+				ctx.arc(x,y,2,0,Math.PI*2,true);
+				ctx.stroke();
+				ctx.fill();
+				
+					ctx.closePath();
+				
+			}
+			
+			  var a = Math.PI;
+			  console.log(a)
+		</script>
+		
+	</body>
+</html>
